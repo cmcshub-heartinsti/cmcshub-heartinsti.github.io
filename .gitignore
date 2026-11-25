@@ -3,7 +3,7 @@ CMCS-Hub/public/
 CMCS-Hub/resources/
 CMCS-Hub/.hugo_build.lock
 
-# Local Hugo / cloudflared binaries (scripts/00-get-hugo.sh fetches these; CI has its own)
+# Local Hugo / cloudflared binaries (CI installs its own)
 hugo-bin/
 
 # Conda pack / offline package artefacts
@@ -11,7 +11,7 @@ cmcs-hub-env.tar.gz
 cmcs-hub-offline-*.tar.gz
 releases/
 
-# Runtime artefacts from scripts/06-start-public.sh
+# Runtime artefacts from the local tunnel helper
 .run/
 .tunnel.log
 .tunnel-url.txt
@@ -24,3 +24,10 @@ CMCS-Hub-Internet-Accessible-Website.txt
 
 # local deploy key for git push (never commit)
 .deploy-key/
+
+# This repository publishes the static site only.
+# Documentation, tooling and environment files stay out of version control.
+/docs/
+/scripts/
+/CMCS-Hub-*.md
+/environment.yml

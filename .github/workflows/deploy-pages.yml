@@ -24,6 +24,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Guard repository contents
+        working-directory: .
+        run: |
+          # The repository publishes the static site only: site source, the
+          # deploy workflow, .gitignore and README.md. Anything else (docs,
+          # scripts, environment files, large artefacts) must not be tracked.
+          unexpected=$(git ls-files | grep -vE '^(CMCS-Hub/|\.github/workflows/deploy-pages\.yml$|\.gitignore$|README\.md$)' || true)
+          if [ -n "$unexpected" ]; then
+            echo "::error::Unexpected tracked files — only the static site source may be committed:"
+            printf '%s\n' "$unexpected"
+            exit 1
+          fi
+          echo "OK: $(git ls-files | wc -l) tracked files, all part of the static site."
+
       - name: Show baseURL in use
         run: grep -n '^baseURL' config.toml
 
