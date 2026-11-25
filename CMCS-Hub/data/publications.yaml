@@ -5,19 +5,19 @@
 
 - title: "Temporal dynamics of the human blood proteome in aging and disease"
   authors: "Wu W, Yang Z, Chen LM, Fan JC, Zhang C, Yuan YM, Bu YF, Deng X, Jia PP, Liu Y, Zhang YH, Qi Y, Dong XH, Hu WJ, Sun QC, Liao C, Xu Z, Ding WQ, Hu XL, Wang JZ, Xiao RP, Liu J"
-  journal: "Nature Health (In press)"
+  journal: "Nature Health"
   year: 2026
-  doi_url: ""
+  doi_url: "https://doi.org/10.1038/s44360-026-00183-1"
   pubmed_url: ""
   github_url: ""
   request_form: true
 
 - title: "Metabolomic profiles and their dynamic changes during the 20 years preceding heart failure"
   authors: "Li JT, Ding SS, Yang Z, Wang MD, Deng X, Sun XT, Lu WT, Jia PP, Liu Y, Zhang YH, Cai J, Zheng LM, Qi Y, Liu J"
-  journal: "Circulation Research (In press)"
+  journal: "Circulation Research"
   year: 2026
-  doi_url: ""
-  pubmed_url: ""
+  doi_url: "https://doi.org/10.1161/CIRCRESAHA.126.328542"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/42495742/"
   github_url: ""
   request_form: true
 
@@ -27,6 +27,33 @@
   year: 2026
   doi_url: "https://doi.org/10.1016/j.isci.2026.117864"
   pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/42909066/"
+  github_url: ""
+  request_form: ""
+
+- title: "A simple score, CKM2S2-BAG, to predict cardiovascular risk with cardiovascular-kidney-metabolic health metrics"
+  authors: "Yang Z, Zhou P, Fan FF, Hao YM, Zhao WL, Wang ZY, Deng X, Deng QJ, Hao YC, Yang N, Han LZ, Jia PP, Qi Y, Zhang Y, Liu J"
+  journal: "iScience"
+  year: 2025
+  doi_url: "https://doi.org/10.1016/j.isci.2025.112780"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/40599322/"
+  github_url: ""
+  request_form: ""
+
+- title: "A hybrid algorithm-based ECG risk prediction model for cardiovascular disease"
+  authors: "Zhou P, Yang Z, Hao YM, Fan FF, Zhao WL, Wang ZY, Deng QJ, Hao YC, Yang N, Han LZ, Jia PP, Qi Y, Zhang Y, Liu J"
+  journal: "Eur Heart J Digit Health"
+  year: 2025
+  doi_url: "https://doi.org/10.1093/ehjdh/ztaf023"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/40395411/"
+  github_url: ""
+  request_form: ""
+
+- title: "Disentangling the inverse LDL-C-hemorrhagic stroke association in Chinese adults with hypertension: findings from the Chinese Multi-provincial Cohort Study"
+  authors: "Yang Z, Qi Y, Sun JY, Liu Jun, Wang M, Deng QJ, Hao YC, Yang N, Ji Z, Zhou XH, Liu J"
+  journal: "Am J Epidemiol"
+  year: 2025
+  doi_url: "https://doi.org/10.1093/aje/kwae318"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/39191655/"
   github_url: ""
   request_form: ""
 
