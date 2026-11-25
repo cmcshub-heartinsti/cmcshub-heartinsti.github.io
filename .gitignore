@@ -31,3 +31,7 @@ CMCS-Hub-Internet-Accessible-Website.txt
 /scripts/
 /CMCS-Hub-*.md
 /environment.yml
+
+# Never commit the deploy key (kept at the project root, outside the repo)
+/cmcshub-heartinsti
+/cmcshub-heartinsti.pub
