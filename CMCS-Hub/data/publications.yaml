@@ -21,6 +21,15 @@
   github_url: ""
   request_form: true
 
+- title: "Potential role of platelet-derived growth factor D in atherosclerotic cardiovascular disease risk"
+  authors: "Deng X, Yang Z, Jia PP, Liu Y, Zhang YH, Deng QJ, Yang N, Hao YC, Han LZ, Sun JY, Lu WT, Sun XT, Qi Y, Liu J"
+  journal: "iScience"
+  year: 2026
+  doi_url: "https://doi.org/10.1016/j.isci.2026.117864"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/42909066/"
+  github_url: ""
+  request_form: ""
+
 - title: "Predictive value for the Chinese population of the Framingham CHD risk assessment tool compared with the Chinese Multi-Provincial Cohort Study"
   authors: "Liu J, Hong YL, D'Agostino RB, Wu ZS, Wang W, Sun JY, Wilson PW, Kannel WB, Zhao D"
   journal: "JAMA"
