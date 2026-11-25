@@ -3,6 +3,15 @@
 # Empty strings ("") indicate the field is not applicable; the badge will be hidden.
 # request_form: true enables a "Data Request" button that links to the data access request form.
 
+- title: "A 20-year longitudinal proteomic analysis prioritizes drug target proteins for atherosclerotic cardiovascular disease"
+  authors: "Yang Z, Deng X, Jia PP, Liu Y, Zhang YH, Deng QJ, Yang N, Hao YC, Han LZ, Sun JY, Lu WT, Sun XT, Stephen AW, Han XK, Liang LM, Qi Y, Liu J"
+  journal: "Under Review at Nature Communications"
+  year: 2026
+  doi_url: ""
+  pubmed_url: ""
+  github_url: ""
+  request_form: true
+
 - title: "Temporal dynamics of the human blood proteome in aging and disease"
   authors: "Wu W, Yang Z, Chen LM, Fan JC, Zhang C, Yuan YM, Bu YF, Deng X, Jia PP, Liu Y, Zhang YH, Qi Y, Dong XH, Hu WJ, Sun QC, Liao C, Xu Z, Ding WQ, Hu XL, Wang JZ, Xiao RP, Liu J"
   journal: "Nature Health"
