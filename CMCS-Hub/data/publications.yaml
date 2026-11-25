@@ -1,0 +1,69 @@
+# CMCS-Hub Publications Database
+# Fields: title, authors, journal, year, doi_url, pubmed_url, github_url, request_form
+# Empty strings ("") indicate the field is not applicable; the badge will be hidden.
+# request_form: true enables a "Data Request" button that links to the data access request form.
+
+- title: "Temporal dynamics of the human blood proteome in aging and disease"
+  authors: "Wu W, Yang Z, Chen LM, Fan JC, Zhang C, Yuan YM, Bu YF, Deng X, Jia PP, Liu Y, Zhang YH, Qi Y, Dong XH, Hu WJ, Sun QC, Liao C, Xu Z, Ding WQ, Hu XL, Wang JZ, Xiao RP, Liu J"
+  journal: "Nature Health (In press)"
+  year: 2026
+  doi_url: ""
+  pubmed_url: ""
+  github_url: ""
+  request_form: true
+
+- title: "Metabolomic profiles and their dynamic changes during the 20 years preceding heart failure"
+  authors: "Li JT, Ding SS, Yang Z, Wang MD, Deng X, Sun XT, Lu WT, Jia PP, Liu Y, Zhang YH, Cai J, Zheng LM, Qi Y, Liu J"
+  journal: "Circulation Research (In press)"
+  year: 2026
+  doi_url: ""
+  pubmed_url: ""
+  github_url: ""
+  request_form: true
+
+- title: "Predictive value for the Chinese population of the Framingham CHD risk assessment tool compared with the Chinese Multi-Provincial Cohort Study"
+  authors: "Liu J, Hong YL, D'Agostino RB, Wu ZS, Wang W, Sun JY, Wilson PW, Kannel WB, Zhao D"
+  journal: "JAMA"
+  year: 2004
+  doi_url: "https://doi.org/10.1001/jama.291.21.2591"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/15173150/"
+  github_url: ""
+  request_form: ""
+
+- title: "Cholesterol-overloaded HDL particles are independently associated with progression of carotid atherosclerosis in a cardiovascular disease-free population: a community-based cohort study"
+  authors: "Qi Y, Fan J, Liu J, Wang W, Wang M, Sun JY, Liu Jun, Xie WX, Zhao F, Li Y, Zhao D"
+  journal: "J Am Coll Cardiol"
+  year: 2015
+  doi_url: "https://doi.org/10.1016/j.jacc.2014.11.019"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/25634834/"
+  github_url: ""
+  request_form: ""
+
+- title: "Long-term cardiovascular risk associated with stage 1 hypertension defined by the 2017 ACC/AHA Hypertension Guideline"
+  authors: "Qi Y, Han XY, Zhao D, Wang W, Wang M, Sun JY, Liu Jun, Li Y, Gao S, Hao YC, Deng QJ, Liu J"
+  journal: "J Am Coll Cardiol"
+  year: 2018
+  doi_url: "https://doi.org/10.1016/j.jacc.2018.06.056"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/30189996/"
+  github_url: ""
+  request_form: ""
+
+- title: "Lipoprotein(a) is associated with the progression and vulnerability of new-onset carotid atherosclerotic plaque"
+  authors: "Duan Y, Zhao D, Sun JY, Liu Jun, Wang M, Hao YC, Li JT, Liu TX, Xiao LX, Hao YM, Wang HM, Qi Y, Liu J"
+  journal: "Stroke"
+  year: 2023
+  doi_url: "https://doi.org/10.1161/STROKEAHA.122.042323"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/37094030/"
+  github_url: ""
+  request_form: ""
+
+- title: "Effectiveness of treat-to-target cholesterol-lowering interventions on cardiovascular disease and all-cause mortality risk in the community-dwelling population: a target trial emulation"
+  authors: "Yang Z, Deng QJ, Hao YC, Yang N, Han LZ, Jia PP, Zhou P, Hao YM, Wang ZY, Zhao WL, Qi Y, Liu J"
+  journal: "Nat Commun"
+  year: 2024
+  doi_url: "https://doi.org/10.1038/s41467-024-54078-4"
+  pubmed_url: "https://pubmed.ncbi.nlm.nih.gov/39548082/"
+  github_url: "https://github.com/yangzhao98/dynamicIntervention"
+  request_form: true
+
+

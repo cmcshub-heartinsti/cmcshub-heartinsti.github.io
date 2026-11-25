@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="nav-inner">
+    <a class="logo" href="{{ .Site.Home.RelPermalink }}">
+      <span class="logo-light">CMCS</span><span class="logo-dark">-Hub</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      {{ $current := . }}
+      {{ range .Site.Menus.main }}
+        {{ $active := or ($current.IsMenuCurrent .Menu .) ($current.HasMenuCurrent .Menu .) }}
+        <a class="nav-link {{ if $active }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+    </button>
+  </div>
+</nav>

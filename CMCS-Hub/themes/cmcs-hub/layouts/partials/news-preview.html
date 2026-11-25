@@ -1,0 +1,26 @@
+{{ $news := where .Site.RegularPages "Section" "news" }}
+{{ $latest := first 3 (sort $news "Date" "desc") }}
+<div class="news-grid">
+  {{ range $latest }}
+  <article class="news-card">
+    <div class="news-card-date">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </div>
+    <h2 class="news-card-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+    <p class="news-card-summary">{{ .Summary | truncate 180 }}</p>
+    <a class="read-more" href="{{ .RelPermalink }}">Read more &rarr;</a>
+  </article>
+  {{ else }}
+  <p class="no-news">No news yet. Check back soon!</p>
+  {{ end }}
+</div>
+{{ if gt (len $latest) 0 }}
+<div class="news-view-more">
+  <a class="view-more-link" href="/news/">
+    View More
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+  </a>
+</div>
+{{ end }}

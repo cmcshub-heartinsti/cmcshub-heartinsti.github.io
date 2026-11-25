@@ -1,0 +1,64 @@
+{{ $formspreeId := .Site.Params.formspreeFormId | default "" }}
+{{ $endpoint := "" }}
+{{ with $formspreeId }}{{ $endpoint = printf "https://formspree.io/f/%s" . }}{{ end }}
+{{ if not $endpoint }}{{ $endpoint = .Site.Params.dataFormEndpoint | default "" }}{{ end }}
+<div class="contact-card">
+<div class="data-request-form" id="dataRequestForm">
+  <h2>Data Request Form</h2>
+  <p>To request access to original data, please complete and submit the form below. We will review your application and respond within 2-3 business days.</p>
+
+  <form id="dataForm" class="data-form" method="POST"
+        data-endpoint="{{ $endpoint }}"
+        data-email="{{ .Site.Params.requestEmail | default "" }}">
+    <input type="hidden" name="dataset" id="formDataset" value="">
+    <input type="hidden" name="publication" id="formPublication" value="">
+
+    <div class="form-field">
+      <label for="formName">Full Name <span class="required">*</span></label>
+      <input type="text" id="formName" name="name" required placeholder="e.g., John Smith">
+    </div>
+
+    <div class="form-field">
+      <label for="formEmail">Email Address <span class="required">*</span></label>
+      <input type="email" id="formEmail" name="email" required placeholder="e.g., john.smith@university.edu">
+    </div>
+
+    <div class="form-field">
+      <label for="formInstitution">Institution / Organization <span class="required">*</span></label>
+      <input type="text" id="formInstitution" name="institution" required placeholder="e.g., Beijing Anzhen Hospital">
+    </div>
+
+    <div class="form-field">
+      <label for="formPosition">Position / Role</label>
+      <input type="text" id="formPosition" name="position" placeholder="e.g., Professor, Postdoc, PhD Student">
+    </div>
+
+    <div class="form-field">
+      <label for="formPurpose">Research Purpose / Intended Use <span class="required">*</span></label>
+      <textarea id="formPurpose" name="purpose" rows="4" required placeholder="Briefly describe your research project and how you plan to use this dataset..."></textarea>
+    </div>
+
+    <div class="form-field">
+      <label for="formAgreement">
+        <input type="checkbox" id="formAgreement" name="agreement" required>
+        I agree to use this dataset solely for non-commercial academic research purposes and will cite the associated publication in any resulting work.
+        <span class="required">*</span>
+      </label>
+    </div>
+
+    <button type="submit" class="form-submit-btn" id="formSubmitBtn">
+      <span class="btn-text">Submit Request</span>
+      <span class="btn-loading" style="display:none;">Sending...</span>
+    </button>
+  </form>
+
+  <div id="formReceipt" class="form-receipt" style="display:none;">
+    <div class="receipt-icon">&#10003;</div>
+    <h4 id="receiptTitle">Request Received</h4>
+    <p id="receiptText">Thank you for your interest. Your data access request has been submitted successfully. We will review your application and respond within 2-3 business days.</p>
+    <p class="receipt-detail" id="receiptDetail">A confirmation email will be sent to the address you provided.</p>
+  </div>
+
+  <div id="formError" class="form-error-msg" style="display:none;"></div>
+</div>
+</div>

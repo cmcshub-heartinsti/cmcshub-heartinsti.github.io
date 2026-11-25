@@ -1,0 +1,45 @@
+{{ define "main" }}
+<section class="page-section">
+  <div class="page-container">
+    <header class="page-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+    </header>
+    {{ if .Content }}
+    <div class="page-content mb-12">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ $paginator := .Paginate .Pages 6 }}
+    {{ if $paginator.Pages }}
+    <div class="news-grid">
+      {{ range $paginator.Pages }}
+      <article class="news-card">
+        <div class="news-card-date">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        </div>
+        <h2 class="news-card-title">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        <p class="news-card-summary">{{ .Summary | truncate 200 }}</p>
+        <a class="read-more" href="{{ .RelPermalink }}">Read more &rarr;</a>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+      {{ if $paginator.HasPrev }}
+      <a class="pagination-link" href="{{ $paginator.Prev.URL }}">&larr; Newer</a>
+      {{ end }}
+      <span class="pagination-info">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+      {{ if $paginator.HasNext }}
+      <a class="pagination-link" href="{{ $paginator.Next.URL }}">Older &rarr;</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

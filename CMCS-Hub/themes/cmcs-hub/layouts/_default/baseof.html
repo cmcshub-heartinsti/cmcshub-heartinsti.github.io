@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="min-h-screen flex flex-col">
+  {{ partial "header.html" . }}
+  <main class="grow">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+  {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $js.RelPermalink }}"></script>
+  {{ if .Params.data_form }}
+  {{ $formjs := resources.Get "js/data-form.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $formjs.RelPermalink }}"></script>
+  {{ end }}
+</body>
+</html>

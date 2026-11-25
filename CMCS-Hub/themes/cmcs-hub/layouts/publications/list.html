@@ -1,0 +1,73 @@
+{{ define "main" }}
+<section class="page-section">
+  <div class="page-container">
+    <header class="page-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+    </header>
+    {{ if .Content }}
+    <div class="page-content mb-12">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+    {{ $pubs := hugo.Data.publications }}
+    {{ $groups := slice }}
+    {{ $yearsSeen := slice }}
+    {{ range sort $pubs "year" "desc" }}
+      {{ $yr := string .year }}
+      {{ if not (in $yearsSeen $yr) }}
+        {{ $groups = $groups | append .year }}
+        {{ $yearsSeen = $yearsSeen | append $yr }}
+      {{ end }}
+    {{ end }}
+
+    {{ $allPubs := sort $pubs "year" "desc" }}
+
+    {{ range $groups }}
+      {{ $year := . }}
+      <div class="pub-year-group">
+        <h2 class="pub-year-heading">{{ $year }}</h2>
+        <div class="pub-list">
+          {{ range where $allPubs "year" $year }}
+          <div class="pub-card">
+            <div class="pub-card-body">
+              <h3 class="pub-title">{{ .title | markdownify }}</h3>
+              <p class="pub-authors">{{ .authors }}</p>
+              <p class="pub-journal"><em>{{ .journal }}</em>, {{ .year }}</p>
+            </div>
+            <div class="pub-links">
+              {{ with .doi_url }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="pill pill-doi">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5A1 1 0 0 1 5.5 21"/></svg>
+                DOI
+              </a>
+              {{ end }}
+              {{ with .pubmed_url }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="pill pill-pubmed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 22 1-1h3l9-9"/><path d="M3 21 12 9A9 9 0 0 1 7.5 1h-5l2 2"/><path d="M9 3a13 13 0 0 0 9 12"/><path d="m22 7-4-4"/><path d="m13 15 4 4"/><path d="M5.5 13a4.5 4.5 0 0 1 3 3"/></svg>
+                PubMed
+              </a>
+              {{ end }}
+              {{ with .github_url }}
+              <a href="{{ . }}" target="_blank" rel="noopener" class="pill pill-github">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                GitHub
+              </a>
+              {{ end }}
+              {{ $pubTitle := .title }}
+              {{ with .request_form }}
+              <a href="/data-request/?dataset={{ $pubTitle | urlize }}&amp;publication={{ $pubTitle | urlquery }}" class="pill pill-request">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                Data Request
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
