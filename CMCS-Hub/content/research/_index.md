@@ -31,7 +31,7 @@ We develop new analytical frameworks for integrating multi-omics data across the
 
 ### 2.2 Drug Target Discovery &amp; Translational Research
 
-We apply our multi-omics integration framework to systematically identify, validate, and translate novel therapeutic targets for cardiovascular disease. Our pipeline combines Mendelian randomization, colocalization analysis, and proteome-wide association studies to prioritize candidate targets, followed by in vitro and in vivo functional validation and preclinical development with biomarker-guided patient stratification for clinical trials.
+We apply our multi-omics integration framework to systematically identify, validate, and translate novel therapeutic targets for cardiovascular disease. Our pipeline combines Mendelian randomization, colocalization analysis, and proteome-wide association studies to prioritize candidate targets, followed by in vitro and in vivo functional validation and preclinical development with biomarker-guided patient stratification for clinical trials. Protein-level results for the 20-year proteomic analysis can be queried one protein at a time in the [protein lookup](/proteome-search/).
 
 ### 2.3 Aging Multi-Omics &amp; Precision Risk Assessment
 

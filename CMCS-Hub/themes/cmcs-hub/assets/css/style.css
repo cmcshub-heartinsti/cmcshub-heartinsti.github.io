@@ -138,6 +138,8 @@ body {
 .pill-github:hover { background: var(--color-github); color: var(--color-white); }
 .pill-request { color: #7c3aed; background: #f5f3ff; border-color: rgba(124,58,237,0.15); }
 .pill-request:hover { background: #7c3aed; color: var(--color-white); }
+.pill-search { color: #0f766e; background: #ecfdf5; border-color: rgba(15,118,110,0.18); }
+.pill-search:hover { background: #0f766e; color: var(--color-white); }
 
 /* Footer */
 .footer { border-top: 1px solid var(--color-gray-100); background: var(--color-white); margin-top: auto; }

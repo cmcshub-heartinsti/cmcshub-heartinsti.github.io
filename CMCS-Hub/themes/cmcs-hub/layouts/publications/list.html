@@ -55,6 +55,13 @@
                 GitHub
               </a>
               {{ end }}
+              {{ $lookupLabel := .search_label | default "Protein lookup" }}
+              {{ with .search_url }}
+              <a href="{{ . | relURL }}" class="pill pill-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                {{ $lookupLabel }}
+              </a>
+              {{ end }}
               {{ $pubTitle := .title }}
               {{ with .request_form }}
               <a href="/data-request/?dataset={{ $pubTitle | urlize }}&amp;publication={{ $pubTitle | urlquery }}" class="pill pill-request">

@@ -1,0 +1,49 @@
+{{ define "extra_head" }}
+{{ $lookupCss := resources.Get "css/lookup.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $lookupCss.RelPermalink }}">
+{{ end }}
+
+{{ define "main" }}
+<section class="page-section">
+  <div class="page-container">
+    <header class="page-header">
+      <h1 class="page-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="page-desc">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ with .Content }}
+    <div class="page-content mb-12 lookup-intro">
+      {{ . }}
+    </div>
+    {{ end }}
+
+    <div class="pl-app">
+      <form class="pl-search" id="pl-form" role="search" autocomplete="off">
+        <label class="pl-visually-hidden" for="pl-input">UniProt ID, gene symbol, Ensembl gene ID or SOMAmer ID</label>
+        <div class="pl-search-row">
+          <input class="pl-input" id="pl-input" name="q" type="search" spellcheck="false"
+                 disabled placeholder="Loading the dataset…">
+          <button class="pl-submit" type="submit">Search</button>
+        </div>
+        <ul class="pl-suggest" id="pl-suggest" role="listbox" aria-label="Identifier suggestions" hidden></ul>
+      </form>
+
+      <p class="pl-meta" id="pl-meta" role="status">Loading the lookup dataset…</p>
+
+      <div class="pl-examples" id="pl-examples">
+        <span>Try</span>
+        <button type="button" class="pl-chip" data-example="Q9NQ94">Q9NQ94</button>
+        <button type="button" class="pl-chip" data-example="ABO">ABO</button>
+        <button type="button" class="pl-chip" data-example="ENSG00000148584">ENSG00000148584</button>
+        <button type="button" class="pl-chip" data-example="seq.12423.38">seq.12423.38</button>
+      </div>
+
+      <p class="pl-status" id="pl-status" aria-live="polite"></p>
+      <div class="pl-results" id="pl-results"></div>
+    </div>
+  </div>
+</section>
+
+{{ $lookupJs := resources.Get "js/proteome-search.js" | resources.Minify | resources.Fingerprint }}
+<script src="{{ $lookupJs.RelPermalink }}" defer></script>
+{{ end }}
